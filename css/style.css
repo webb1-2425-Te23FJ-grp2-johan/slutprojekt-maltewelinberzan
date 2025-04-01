@@ -1,0 +1,18 @@
+img{
+    display: block;
+}
+
+div{
+    border: 5px red solid;
+}
+
+
+
+.instagram-embed-container{
+    padding 8px;
+}
+.instagram-embed-content{
+    background: grey;
+    line-height: 0;
+    margin-top: 40px;
+}
