@@ -8,8 +8,8 @@ img {
 }
 
 div {
-  border: 4px red solid;
-  padding: 10px;
+  outline: 4px red solid;
+  /* padding: 10px; */
 }
 
 .header {
@@ -32,8 +32,11 @@ div {
 .bigpiccontainer {
   display: flex;
   justify-content: space-between;
-  max-height: 1200px;
+  /* max-height: 1200px; */
   border: purple 4px solid;
+}
+.bigpiccontainer div{
+    max-height: 1200px;
 }
 
 .instagramposts {
