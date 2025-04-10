@@ -20,6 +20,7 @@ div {
   display: flex;
   justify-content: space-between;
   border: 4px blue solid;
+  min-height: 100px;
 }
 .trlogo {
   grid-template: trlogo;
@@ -27,32 +28,50 @@ div {
 
 .tllogo {
   grid-template: tllogo;
+  background-color: green;
 }
 
 .bigpiccontainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   /* max-height: 1200px; */
   border: purple 4px solid;
+  width: 100%;
+
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .bigpiccontainer div{
-    max-height: 1200px;
+    /* max-height: 1200px; */
 }
-
+.leftbigpic div{
+outline: 4px rgb(102, 255, 0) solid;
+}
 .instagramposts {
-  display: grid;
-  grid-template-areas: "post1 post2 post3 post4 post5";
+  display: flex;
+  /* grid-template-areas: "post1 post2 post3"; */
+  justify-content: center ;
+  /* padding: 20px; */
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .post1 {
   grid-area: post1;
+ 
+  display: none;
 }
+
 .post2 {
   grid-area: post2;
+  display: none;
+
 }
 .post3 {
   grid-area: post3;
+  display: none;
 }
+
 .post4 {
   grid-area: post4;
 }
@@ -81,4 +100,22 @@ div {
   /* font-style: normal; */
   line-height: 17px;
   /* text-decoration: none; */
+}
+
+
+
+@media screen and (min-width: 600px) {
+  .post1 {
+    display: block;
+  }
+ 
+}
+
+@media screen and (min-width: 1000px) {
+  .post2 {
+    display: block;
+  }
+  .instagramposts{
+    justify-content: space-between;
+  }
 }
