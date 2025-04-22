@@ -20,7 +20,7 @@ div {
   display: flex;
   justify-content: space-between;
   border: 4px blue solid;
-  min-height: 100px;
+  min-height: 80px;
 }
 .trlogo {
   grid-template: trlogo;
@@ -33,13 +33,14 @@ div {
 
 .bigpiccontainer {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   /* max-height: 1200px; */
   border: purple 4px solid;
   width: 100%;
 
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 .bigpiccontainer div{
     /* max-height: 1200px; */
@@ -108,6 +109,10 @@ outline: 4px rgb(102, 255, 0) solid;
   .post1 {
     display: block;
   }
+  .bigpiccontainer{
+    flex-direction: row;
+    justify-content: space-around;
+  }
  
 }
 
@@ -117,5 +122,8 @@ outline: 4px rgb(102, 255, 0) solid;
   }
   .instagramposts{
     justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+
   }
 }
