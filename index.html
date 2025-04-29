@@ -8,14 +8,53 @@
   </head>
   <body>
     <div class="header">
-      <div class="tllogo"></div>
-      <div class="trlogo"></div>
+      <div class="tllogo">
+        <button id="menu-button" class="hamburger mt-4 ml-4">
+          <img
+            src="img/menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+            alt="Meny"
+          />
+        </button>
+        <div id="menu">
+          <button id="menu-close">
+            <img
+              src="img/close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"
+              alt="Stäng meny"
+            />
+          </button>
+          <nav class="p-6">
+            <ul class="space-y-3">
+              <li><a href="#">Hem</a></li>
+              <li><a href="#">Produkter</a></li>
+              <li><a href="#">Om Oss</a></li>
+              <li><a href="#">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="trlogo">
+        <a href="https://www.instagram.com/knazzy.jeans/"
+          ><img
+            src="img/icons8-instagram.svg"
+            alt="Instagram"
+            title="Icon by Icons8"
+        /></a>
+      </div>
     </div>
     <div class="bigpiccontainer">
       <div class="leftbigpic">
-        <div class="pants">
-        <img src="/img/pants-540-500.webp" alt="" />
-      </div>
+        <div class="product-item">
+          <a href="pants.html" class="product-link">
+            <div class="product-image-container">
+                <img src="/img/pants-540-500.webp" alt="Jeans" />
+            </div>
+            <div class="product-title-overlay">
+                Jeans
+            </div>
+        </a>
+
+
+        </div>
         <div class="shirts">
           <img src="/img/shirt-540-500.webp" alt="" />
         </div>
@@ -28,7 +67,7 @@
           <img src="/img/misc-540-500.webp" alt="" />
         </div>
       </div>
-    </div>  
+    </div>
     <div class="instagramposts">
       <div class="post1">
         <blockquote
@@ -116,5 +155,6 @@
       </div> -->
     </div>
     <script async src="//www.instagram.com/embed.js"></script>
+    <script src="/js/hamburger.js"></script>
   </body>
 </html>

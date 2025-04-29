@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knazzy Jeans - Produkter</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .product-link {
+            display: block; /* Gör hela div:en klickbar */
+            text-decoration: none; /* Tar bort understrykning från länkar */
+            color: inherit; /* Ärver textfärgen från föräldern */
+        }
+
+        .product-item {
+            position: relative; /* För att kunna positionera text över bilden */
+            overflow: hidden; /* Klipper innehåll som går utanför */
+            border-radius: 8px; /* Valfri rundade hörn */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Valfri skugga */
+            transition: transform 0.3s ease-in-out; /* Mjuk hover-effekt */
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: auto; /* Behåller bildens proportioner */
+        }
+
+        .product-title-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Halvtransparent svart bakgrund */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            opacity: 0; /* Dölj texten initialt */
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .product-item:hover .product-title-overlay {
+            opacity: 1; /* Visa texten vid hover */
+        }
+
+        /* Anpassa layouten för större skärmar */
+        @media screen and (min-width: 600px) {
+            .bigpiccontainer {
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: stretch; /* Se till att div:arna har samma höjd */
+            }
+
+            .leftbigpic, .rightbigpic {
+                width: 48%; /* Ungefär hälften av bredden */
+                display: flex;
+                flex-direction: column;
+                gap: 10px; /* Avstånd mellan bilderna */
+            }
+
+            .leftbigpic > div, .rightbigpic > div {
+                flex-grow: 1; /* Låt div:arna fylla tillgängligt utrymme */
+            }
+        }
+
+        /* Anpassa ytterligare för ännu större skärmar om det behövs */
+        @media screen and (min-width: 1000px) {
+            .bigpiccontainer {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="tllogo">
+            <button id="menu-button" class="hamburger mt-4 ml-4">
+                <img src="img/menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            </button>
+            <div id="menu">
+                <button id="menu-close">
+                    <img src="img/close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </button>
+                <nav class="p-6">
+                    <ul class="space-y-3">
+                        <li><a href="#">Hem</a></li>
+                        <li><a href="#">Produkter</a></li>
+                        <li><a href="#">Om Oss</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="trlogo"><a href="https://www.instagram.com/knazzy.jeans/"><img src="img/icons8-instagram.svg" alt="Instagram" title="Icon by Icons8"></a></div>
+    </div>
+
+    <div class="bigpiccontainer">
+        <div class="leftbigpic">
+            <div class="product-item">
+                <a href="pants.html" class="product-link">
+                    <div class="product-image-container">
+                        <img src="/img/pants-540-500.webp" alt="Jeans" />
+                    </div>
+                    <div class="product-title-overlay">
+                        Jeans
+                    </div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="shirts.html" class="product-link">
+                    <div class="product-image-container">
+                        <img src="/img/shirt-540-500.webp" alt="Skjortor" />
+                    </div>
+                    <div class="product-title-overlay">
+                        Skjortor
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="rightbigpic">
+            <div class="product-item">
+                <a href="bags.html" class="product-link">
+                    <div class="product-image-container">
+                        <img src="/img/bag-540-500.webp" alt="Väskor" />
+                    </div>
+                    <div class="product-title-overlay">
+                        Väskor
+                    </div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="misc.html" class="product-link">
+                    <div class="product-image-container">
+                        <img src="/img/misc-540-500.webp" alt="Övrigt" />
+                    </div>
+                    <div class="product-title-overlay">
+                        Övrigt
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="instagramposts">
+        <div class="post1">
+            <blockquote
+                class="instagram-media"
+                data-instgrm-captioned
+                data-instgrm-permalink="https://www.instagram.com/p/DHgp5OiMGCj/?utm_source=ig_embed&amp;utm_campaign=loading"
+                data-instgrm-version="13"
+            >
+                <div class="instagram-embed-author-link">
+                    <a
+                        href="https://www.instagram.com/p/DHgp5OiMGCj/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        target="_top"
+                        >Visa detta inlägg på Instagram</a
+                    >
+                </div>
+            </blockquote>
+        </div>
+        <div class="post2">
+            <blockquote
+                class="instagram-media"
+                data-instgrm-captioned
+                data-instgrm-permalink="https://www.instagram.com/reel/DHdW_YeMQJt/?utm_source=ig_embed&amp;utm_campaign=loading"
+                data-instgrm-version="13"
+            >
+                <div class="instagram-embed-author-link">
+                    <a
+                        href="https://www.instagram.com/reel/DHdW_YeMQJt/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        target="_top"
+                        >Visa detta inlägg på Instagram</a
+                    >
+                </div>
+            </blockquote>
+        </div>
+        <div class="post3">
+            <blockquote
+                class="instagram-media"
+                data-instgrm-captioned
+                data-instgrm-permalink="https://www.instagram.com/p/C_hs7vmuvRV/?next=https%3A%2F%2Fwww.instagram.com%2Fberzanselevkar%2F&amp;img_index=1"
+                data-instgrm-version="13"
+            >
+                <div class="instagram-embed-author-link">
+                    <a
+                        href="https://www.instagram.com/p/C_hs7vmuvRV/?next=https%3A%2F%2Fwww.instagram.com%2Fberzanselevkar%2F&amp;img_index=1"
+                        target="_top"
+                        >Visa detta inlägg på Instagram</a
+                    >
+                </div>
+            </blockquote>
+        </div>
+    </div>
+
+    <script async src="//www.instagram.com/embed.js"></script>
+    <script src="/js/hamburger.js"></script>
+</body>
+</html>

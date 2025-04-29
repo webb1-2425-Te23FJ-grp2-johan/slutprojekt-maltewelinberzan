@@ -42,16 +42,31 @@ div {
   padding-left: 5%;
   padding-right: 5%;
 }
-.bigpiccontainer div{
-    /* max-height: 1200px; */
+.bigpiccontainer div {
+  /* max-height: 1200px; */
 }
-.leftbigpic div{
-outline: 4px rgb(102, 255, 0) solid;
+
+.leftbigpic{
+  max-width: 540px;
+}
+.rightbigpic{
+  max-width: 540px;
+}
+
+.leftbigpic div {
+  outline: 4px rgb(102, 255, 0) solid;
+  display: flex;
+  justify-content: center;
+}
+.rightbigpic div {
+  outline: 4px rgb(255, 0, 200) solid;
+  display: flex;
+  justify-content: center;
 }
 .instagramposts {
   display: flex;
   /* grid-template-areas: "post1 post2 post3"; */
-  justify-content: center ;
+  justify-content: center;
   /* padding: 20px; */
   padding-left: 10%;
   padding-right: 10%;
@@ -59,14 +74,13 @@ outline: 4px rgb(102, 255, 0) solid;
 
 .post1 {
   grid-area: post1;
- 
+
   display: none;
 }
 
 .post2 {
   grid-area: post2;
   display: none;
-
 }
 .post3 {
   grid-area: post3;
@@ -90,7 +104,6 @@ outline: 4px rgb(102, 255, 0) solid;
   min-width: 326px;
   padding: 0;
   width: 100%;
- 
 }
 
 .instagram-embed-author-link {
@@ -103,27 +116,202 @@ outline: 4px rgb(102, 255, 0) solid;
   /* text-decoration: none; */
 }
 
+.product-link {
+  display: block; /* Gör hela div:en klickbar */
+  text-decoration: none; /* Tar bort understrykning från länkar */
+  color: inherit; /* Ärver textfärgen från föräldern */
+}
 
+.product-item {
+  position: relative; /* För att kunna positionera text över bilden */
+  overflow: hidden; /* Klipper innehåll som går utanför */
+  border-radius: 8px; /* Valfri rundade hörn */
+  box-shadow: 0 2px 5px rgba(218, 14, 14, 0.1); /* Valfri skugga */
+  transition: transform 0.3s ease-in-out; /* Mjuk hover-effekt */
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-image-container {
+  width: 100%;
+  height: auto; /* Behåller bildens proportioner */
+}
+
+.product-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Halvtransparent svart bakgrund */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0; /* Dölj texten initialt */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.product-item:hover .product-title-overlay {
+  opacity: 1; /* Visa texten vid hover */
+}
+
+/* Anpassa layouten för större skärmar */
+@media screen and (min-width: 600px) {
+  .bigpiccontainer {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch; /* Se till att div:arna har samma höjd */
+  }
+
+  .leftbigpic,
+  .rightbigpic {
+    width: 48%; /* Ungefär hälften av bredden */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Avstånd mellan bilderna */
+  }
+
+  .leftbigpic > div,
+  .rightbigpic > div {
+    flex-grow: 1; /* Låt div:arna fylla tillgängligt utrymme */
+  }
+}
+
+/* Anpassa ytterligare för ännu större skärmar om det behövs */
+@media screen and (min-width: 1000px) {
+  .bigpiccontainer {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
 
 @media screen and (min-width: 600px) {
   .post1 {
     display: block;
   }
-  .bigpiccontainer{
+  .bigpiccontainer {
     flex-direction: row;
     justify-content: space-around;
   }
- 
 }
 
 @media screen and (min-width: 1000px) {
   .post2 {
     display: block;
   }
-  .instagramposts{
+  .instagramposts {
     justify-content: space-between;
     padding-left: 10%;
     padding-right: 10%;
-
   }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.menu-open {
+  transform: translateX(0);
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
+}
+
+.hamburger {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: flex; /* Lägg till flexbox för centrering av linjerna */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.hamburger:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #374151;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.menu-open .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-open .line2 {
+  opacity: 0;
+}
+
+.menu-open .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 80%;
+  max-width: 320px; /* Begränsa bredden på menyn */
+  background-color: rgb(238, 238, 238);
+  color: #374151;
+  transform: translateX(-100%); /* Starta menyn utanför skärmen */
+  transition: transform 0.3s ease-in-out; /* Mjuk övergång */
+  overflow-y: auto; /* Om innehållet i menyn är för långt */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Skugga för menyn */
+  z-index: 10; /* Se till att menyn är över annat innehåll */
+}
+
+#menu-close {
+  background-color: transparent;
+  /* color: #374151; */
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+#menu.menu-open {
+  transform: translateX(0);
+}
+
+#menu-close:hover {
+  background-color: #d9dadb; /* Ljusare bakgrund vid hover */
+}
+
+.nav-links {
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.nav-links li {
+  margin-bottom: 1rem;
+}
+
+.nav-links a {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #374151;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background-color: #e5e7eb; /* Ljusgrå hover-effekt */
+  color: #1f2937;
 }

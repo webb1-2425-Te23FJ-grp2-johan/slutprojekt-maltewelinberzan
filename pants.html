@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knazzy Jeans - Detaljer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .product-detail-container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            max-width: 960px;
+            margin: 20px auto;
+            gap: 20px;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: green; /* Exempel på pris-färg */
+        }
+
+        .product-description {
+            line-height: 1.6;
+        }
+
+        .product-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .size-options, .color-options {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .size-options label, .color-options label {
+            font-weight: bold;
+        }
+
+        .size-select, .color-select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .add-to-cart-button {
+            background-color: #007bff; /* Exempel på knappfärg */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* För större skärmar, visa bild och info bredvid varandra */
+        @media screen and (min-width: 768px) {
+            .product-detail-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .product-image {
+                width: 50%;
+            }
+
+            .product-info {
+                width: 50%;
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="tllogo">
+            <button id="menu-button" class="hamburger mt-4 ml-4">
+                <img src="img/menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            </button>
+            <div id="menu">
+                <button id="menu-close">
+                    <img src="img/close_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </button>
+                <nav class="p-6">
+                    <ul class="space-y-3">
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="index.html">Produkter</a></li>
+                        <li><a href="#">Om Oss</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="trlogo"><a href="https://www.instagram.com/knazzy.jeans/"><img src="img/icons8-instagram.svg" alt="Instagram" title="Icon by Icons8"></a></div>
+    </div>
+
+    <div class="product-detail-container">
+        <img src="/img/pants-540-500.webp" alt="Detaljer för Jeans" class="product-image" />
+        <div class="product-info">
+            <h1 class="product-title">Premium Knazzy Jeans</h1>
+            <p class="product-price">599 kr</p>
+            <p class="product-description">
+                Våra premium Knazzy Jeans är tillverkade av högkvalitativ denim för optimal komfort och hållbarhet. Med en modern passform och stilrena detaljer är dessa jeans ett perfekt tillskott till din garderob. Finns i flera tvättar och storlekar.
+            </p>
+
+            <div class="product-options">
+                <div class="size-options">
+                    <label for="size">Storlek:</label>
+                    <select id="size" class="size-select">
+                        <option value="28">28</option>
+                        <option value="30">30</option>
+                        <option value="32">32</option>
+                        <option value="34">34</option>
+                    </select>
+                </div>
+
+                <div class="color-options">
+                    <label for="color">Färg:</label>
+                    <select id="color" class="color-select">
+                        <option value="blue">Blå</option>
+                        <option value="black">Svart</option>
+                        <option value="grey">Grå</option>
+                    </select>
+                </div>
+
+                <button class="add-to-cart-button">Lägg till i varukorgen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/hamburger.js"></script>
+</body>
+</html>
