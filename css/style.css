@@ -1,5 +1,13 @@
 * {
   box-sizing: border-box;
+  /* background-color: darkcyan; */
+  padding: 0;
+  margin: 0;
+}
+body{
+  /* background-color: darkcyan;  */
+  /* background-color: rgb(156, 109, 156); */
+  background-color: rgb(163, 135, 163);
 }
 img {
   display: block;
@@ -8,35 +16,37 @@ img {
 }
 
 div {
-  outline: 4px red solid;
-  /* padding: 10px; */
+  /* outline: 4px red solid; */
+  
 }
 
 .header {
-  /* display: grid; */
-  /* grid-template-areas:  */
-  /* "tllogo trlogo" */
-  /* ; */
-  display: flex;
+    display: flex;
   justify-content: space-between;
-  border: 4px blue solid;
+  /* border: 4px blue solid; */
   min-height: 80px;
+  background-color: #374151;
 }
 .trlogo {
   grid-template: trlogo;
+  background-color: #374151;
+  outline: red solid 2px;
 }
 
 .tllogo {
   grid-template: tllogo;
-  background-color: green;
+  background-color: #374151;
+  outline: red solid 2px;
 }
+
+
 
 .bigpiccontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* max-height: 1200px; */
-  border: purple 4px solid;
+  
+  /* border: purple 4px solid; */
   width: 100%;
 
   padding-left: 5%;
@@ -54,12 +64,12 @@ div {
 }
 
 .leftbigpic div {
-  outline: 4px rgb(102, 255, 0) solid;
+  /* outline: 4px greenyellow solid; */
   display: flex;
   justify-content: center;
 }
 .rightbigpic div {
-  outline: 4px rgb(255, 0, 200) solid;
+  /* outline: 4px hotpink solid; */
   display: flex;
   justify-content: center;
 }
@@ -126,7 +136,7 @@ div {
   position: relative; /* För att kunna positionera text över bilden */
   overflow: hidden; /* Klipper innehåll som går utanför */
   border-radius: 8px; /* Valfri rundade hörn */
-  box-shadow: 0 2px 5px rgba(218, 14, 14, 0.1); /* Valfri skugga */
+
   transition: transform 0.3s ease-in-out; /* Mjuk hover-effekt */
 }
 
@@ -230,7 +240,7 @@ body {
 }
 
 .hamburger:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgb(0, 71, 71);
 }
 
 .line {
@@ -261,14 +271,16 @@ body {
   height: 100%;
   width: 80%;
   max-width: 320px; /* Begränsa bredden på menyn */
-  background-color: rgb(238, 238, 238);
-  color: #374151;
+  background-color: whitesmoke;
+  color: blac;
   transform: translateX(-100%); /* Starta menyn utanför skärmen */
   transition: transform 0.3s ease-in-out; /* Mjuk övergång */
   overflow-y: auto; /* Om innehållet i menyn är för långt */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Skugga för menyn */
-  z-index: 10; /* Se till att menyn är över annat innehåll */
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+    /* Skugga för menyn */
+  z-index: 10; 
+  /* Se till att menyn är över annat innehåll */
 }
 
 #menu-close {
@@ -312,6 +324,112 @@ body {
 }
 
 .nav-links a:hover {
-  background-color: #e5e7eb; /* Ljusgrå hover-effekt */
-  color: #1f2937;
+  /* background-color: #e5e7eb;  */
+  /* Ljusgrå hover-effekt */
+  /* color: #1f2937; */
+}
+
+
+
+/* pants hemsida css kod */
+/*  */
+/*  */
+.product-detail-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 960px;
+  margin: 20px auto;
+  gap: 20px;
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: greenyellow; /* Exempel på pris-färg */
+  max-width: 75px;
+  background-color: #374151;
+  border-radius: 5px;
+}
+
+.product-description {
+  line-height: 1.6;
+}
+
+.product-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.size-options, .color-options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.size-options label, .color-options label {
+  font-weight: bold;
+}
+
+.size-select, .color-select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.add-to-cart-button {
+  background-color: #007bff; /* Exempel på knappfärg */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3;
+}
+
+/* För större skärmar, visa bild och info bredvid varandra */
+@media screen and (min-width: 768px) {
+  .product-detail-container {
+      flex-direction: row;
+      align-items: flex-start;
+  }
+
+  .product-image {
+      width: 50%;
+  }
+
+  .product-info {
+      width: 50%;
+      padding-left: 20px;
+  }
+}
+
+.product-price{
+  /* display: flex; */
+  /* justify-content: start; */
+
 }
