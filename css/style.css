@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
 }
-body{
+body {
   /* background-color: darkcyan;  */
   /* background-color: rgb(156, 109, 156); */
   background-color: rgb(163, 135, 163);
@@ -17,58 +17,60 @@ img {
 
 div {
   /* outline: 4px red solid; */
-  
 }
 
 .header {
-    display: flex;
+  display: flex;
   justify-content: space-between;
   /* border: 4px blue solid; */
   min-height: 80px;
   background-color: #374151;
 
+  background-image: url("/assets/knazlogo-removebg-preview.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
 }
 .trlogo {
   grid-template: trlogo;
-  background-color: #374151;
+  /* background-color: #374151; */
   /* outline: red solid 2px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-      padding: 15px;
+  padding: 15px;
 }
 
 .tllogo {
   grid-template: tllogo;
-  background-color: #374151;
+  /* background-color: #374151; */
   /* outline: red solid 2px; */
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-    padding: 15px;
+  padding: 15px;
 }
-
-
 
 .bigpiccontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   /* border: purple 4px solid; */
   width: 100%;
 
   padding-left: 5%;
   padding-right: 5%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .bigpiccontainer div {
   /* max-height: 1200px; */
 }
 
-.leftbigpic{
+.leftbigpic {
   max-width: 540px;
 }
-.rightbigpic{
+.rightbigpic {
   max-width: 540px;
 }
 
@@ -201,8 +203,12 @@ div {
 /* Anpassa ytterligare för ännu större skärmar om det behövs */
 @media screen and (min-width: 1000px) {
   .bigpiccontainer {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .instagramposts {
+    margin-left: 7%;
+    margin-right: 7%;
   }
 }
 
@@ -286,20 +292,21 @@ body {
   transition: transform 0.3s ease-in-out; /* Mjuk övergång */
   overflow-y: auto; /* Om innehållet i menyn är för långt */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06); 
-    /* Skugga för menyn */
-  z-index: 10; 
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* Skugga för menyn */
+  z-index: 10;
   /* Se till att menyn är över annat innehåll */
+  padding: 15px;
 }
 
 #menu-close {
   background-color: transparent;
   /* color: #374151; */
-  margin: 10px;
+  /* margin: 15px; */
   padding: 10px;
   border-radius: 8px;
   transition: background-color 0.3s ease;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   cursor: pointer;
   border: none;
 }
@@ -309,35 +316,21 @@ body {
 }
 
 #menu-close:hover {
-  background-color: #d9dadb; /* Ljusare bakgrund vid hover */
+  background-color: #d9dadb;
+  /* Ljusare bakgrund vid hover */
 }
 
-.nav-links {
-  padding: 1rem;
-  margin-top: 2rem;
+.hamburger-links {
+  margin: 15px;
 }
-
-.nav-links li {
-  margin-bottom: 1rem;
+.hamburger-links li {
+  margin: 10px;
 }
-
-.nav-links a {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #374151;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
+.hamburger-links li a {
   text-decoration: none;
+  color: #08214b;
+  font-weight: bold;
 }
-
-.nav-links a:hover {
-  /* background-color: #e5e7eb;  */
-  /* Ljusgrå hover-effekt */
-  /* color: #1f2937; */
-}
-
 
 
 /* pants hemsida css kod */
@@ -370,16 +363,20 @@ body {
   margin-bottom: 10px;
 }
 
+.pricediv{
+  display: flex;
+}
+
 .product-price {
-  font-size: 1.5rem;
-  color: greenyellow; /* Exempel på pris-färg */
-  max-width: 75px;
+  font-size: 2rem;
+  color: greenyellow; 
+  /* max-width: 75px; */
   background-color: #374151;
   border-radius: 5px;
 }
 
 .product-description {
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .product-options {
@@ -389,17 +386,20 @@ body {
   margin-top: 20px;
 }
 
-.size-options, .color-options {
+.size-options,
+.color-options {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.size-options label, .color-options label {
+.size-options label,
+.color-options label {
   font-weight: bold;
 }
 
-.size-select, .color-select {
+.size-select,
+.color-select {
   padding: 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -423,105 +423,102 @@ body {
 /* För större skärmar, visa bild och info bredvid varandra */
 @media screen and (min-width: 768px) {
   .product-detail-container {
-      flex-direction: row;
-      align-items: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .product-image {
-      width: 50%;
+    width: 50%;
   }
 
   .product-info {
-      width: 50%;
-      padding-left: 20px;
+    width: 50%;
+    padding-left: 20px;
   }
 }
 
-.product-price{
+.product-price {
   /* display: flex; */
   /* justify-content: start; */
-
 }
 
+.about-us-container {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 20px;
+  line-height: 1.6;
+}
 
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
 
-        .about-us-container {
-            max-width: 960px;
-            margin: 20px auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
+.paragraph {
+  margin-bottom: 15px;
+}
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #333;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-        }
+.team-section {
+  margin-top: 30px;
+}
 
-        .paragraph {
-            margin-bottom: 15px;
-        }
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-        .team-section {
-            margin-top: 30px;
-        }
+.team-member img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
 
-        .team-member {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+.team-info {
+  flex-grow: 1;
+}
 
-        .team-member img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
+.team-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
 
-        .team-info {
-            flex-grow: 1;
-        }
+.team-role {
+  margin-bottom: 5px;
+  font-style: italic;
+  color: #777;
+}
 
-        .team-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+.team-bio {
+  color: #555;
+}
 
-        .team-role {
-            margin-bottom: 5px;
-            font-style: italic;
-            color: #777;
-        }
+/* Anpassa layout för större skärmar */
+@media screen and (min-width: 768px) {
+  .about-us-container {
+    padding: 40px;
+  }
 
-        .team-bio {
-            color: #555;
-        }
+  .team-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
 
-        /* Anpassa layout för större skärmar */
-        @media screen and (min-width: 768px) {
-            .about-us-container {
-                padding: 40px;
-            }
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-            .team-section {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-            }
-
-            .team-member {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .team-member img {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
+  .team-member img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
