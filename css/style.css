@@ -170,6 +170,14 @@ img {
   .post2 {
     display: block;
   }
+  .aboutus-image1 img{
+    display: none;
+  
+  }
+  .aboutus-image2 img{
+    display: block;
+  
+  }
 }
 .menu-open {
   transform: translateX(0);
@@ -405,4 +413,19 @@ img {
 
 .team-bio {
   color: #555;
+}
+
+.aboutus-image1{
+  display: flex;
+  justify-content: center;
+}
+.aboutus-image1 img{
+  border-radius: 30px;
+  border: red solid thin;
+  
+}
+.aboutus-image2 img{
+  border-radius: 30px;
+  border: red solid thin;
+  display: none;
 }
